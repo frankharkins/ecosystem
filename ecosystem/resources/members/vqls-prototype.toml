@@ -8,11 +8,11 @@ affiliations = "Netherlands eScience Center @ Quantum Application Lab, Amsterdam
 labels = [ "Algorithms", "Optimization",]
 created_at = 1683906067.55753
 updated_at = 1683906067.557535
+tier = "Community"
 styles_results = []
 coverages_results = []
-tier = "Community"
 skip_tests = false
-stars = 1
+stars = 2
 [[tests_results]]
 passed = true
 test_type = "development"
