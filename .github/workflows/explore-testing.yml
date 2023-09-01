@@ -24,7 +24,7 @@ on:
         options:
           - standard
           - stable
-          - dev
+          - development
 
 jobs:
   run_tests:
@@ -39,16 +39,18 @@ jobs:
         with:
           repository: ${{ inputs.repo_name }}
 
-      - name: Install tox
+      - name: Set up standard environment
         run: |
           pip install tox
+          tox exec -epy39 -- python -c ""  # Empty command to force tox setup
 
-      - name: Run standard tests
+      - name: Force install development qiskit
+        if: ${{ inputs.test_type == 'development' }}
+        run: |
+          tox exec -epy39 -- pip install git+https://github.com/Qiskit/qiskit
+          
+      - name: Run tests
         run: |
           tox -epy39
 
-      # - name: Run dev tests
-      #   run: |
-      #     TEST_COMMANDS=$(tox config -epy39 -k commands | grep "^  " | grep -v "pip check")
-      #     tox-epy39 --override testenv.commands="pip install git+https://github.com/Qiskit/qiskit --force
-      #     ${TEST_COMMANDS}"
+
