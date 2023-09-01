@@ -39,11 +39,6 @@ jobs:
         with:
           repository: ${{ inputs.repo_name }}
 
-      - name: Create tox.ini
-        if: ${{ [ ! -f ./.tox.ini ] }}
-        run: |
-          touch tox.ini
-
       - name: Set up standard environment
         run: |
           pip install tox
