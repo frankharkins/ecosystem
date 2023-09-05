@@ -41,7 +41,7 @@ jobs:
         run: |
           if [ -e ecosystem.json ]; then echo "HAS_ECOSYSTEM_JSON=true" >> "$GITHUB_ENV"; fi
           if [ -e tox.ini ]; then echo "HAS_TOX_INI=true" >> "$GITHUB_ENV"; fi
-          echo "REQUIREMENTS_FILES=$(ls requirements*.txt | xargs)" >> "$GITHUB_ENV"
+          echo "REQUIREMENTS_FILES=$(ls *requirements*.txt | xargs)" >> "$GITHUB_ENV"
 
       - name: Create default tox.ini
         if: ${{ env.HAS_TOX_INI != 'true' }}
@@ -53,9 +53,10 @@ jobs:
           [testenv]
           usedevelop = true
           deps =
+            pytest
           $(for FILE in $REQUIREMENTS_FILES; do echo "  -r$FILE"; done)
           commands =
-              python -m unittest
+              python -m unittest -v
           " > tox.ini
           echo "Created default tox.ini:"
           cat tox.ini | xargs echo -e
