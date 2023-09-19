@@ -262,7 +262,8 @@ class Manager:
                     }
                 )
             )
-    def add_test_result(self, repo_name, test_json):
+    def add_test_result(self, test_json):
+        repo_name = test_json.pop('repo_name')
         repo_url = f"https://github.com/{repo_name}"
         test_result = TestResult.from_dict(test_json)
         self.dao.add_repo_test_result(repo_url=repo_url, test_result=test_result)

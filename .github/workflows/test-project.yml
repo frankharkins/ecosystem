@@ -86,7 +86,8 @@ jobs:
         run: |
           LOGS_LINK=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           JSON_CONTENT="{
-            \"passed\": \"${{ env.PASS }}\",
+            \"repo_name\": \"${{ inputs.repo_name }}\",
+            \"passed\": ${{ env.PASS }},
             \"test_type\": \"${{ inputs.test_type }}\",
             \"package\": \"qiskit\",
             \"package_version\": \"${{ env.QISKIT_VERSION }}\",
