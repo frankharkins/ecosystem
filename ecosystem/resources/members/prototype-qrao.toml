@@ -13,41 +13,43 @@ coverages_results = []
 skip_tests = false
 stars = 27
 [[tests_results]]
-passed = true
+passed = false
 test_type = "development"
 package = "qiskit"
-package_version = "0.45.0"
-logs_link = "https://github.com/qiskit-community/ecosystem/actions/runs/5936782681"
-package_commit_hash = "0b51250e219ca303654fc28a318c21366584ccd3"
-qiskit_version = "0.45.0"
-timestamp = 1692696456.131841
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+package_commit_hash = "01bb111cfa706658134c4481a354133bc5326f24"
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211443.407202
 
 [[tests_results]]
 passed = true
 test_type = "last passing version"
 package = "qiskit"
-package_version = "0.44.1"
-logs_link = "https://github.com/qiskit-community/ecosystem/actions/runs/5936782681"
-qiskit_version = "0.44.1"
-timestamp = 1692696456.271797
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211445.799037
 
 [[tests_results]]
 passed = true
 test_type = "stable"
 package = "qiskit"
-package_version = "0.44.1"
-logs_link = "https://github.com/qiskit-community/ecosystem/actions/runs/5936782681"
-qiskit_version = "0.44.1"
-timestamp = 1692696456.271801
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+package_commit_hash = ""
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211444.987508
 
 [[tests_results]]
-passed = false
+passed = true
 test_type = "standard"
 package = "qiskit"
-package_version = ""
-logs_link = "https://github.com/qiskit-community/ecosystem/actions/runs/5936782681"
-qiskit_version = ""
-timestamp = 1692696456.271803
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+package_commit_hash = ""
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211446.564513
 
 [[historical_test_results]]
 passed = false
@@ -268,6 +270,36 @@ logs_link = "https://github.com/qiskit-community/ecosystem/actions/runs/59367826
 package_commit_hash = "0b51250e219ca303654fc28a318c21366584ccd3"
 qiskit_version = "0.45.0"
 timestamp = 1692696456.131841
+
+[[historical_test_results]]
+passed = false
+test_type = "development"
+package = "qiskit"
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+package_commit_hash = "01bb111cfa706658134c4481a354133bc5326f24"
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211443.407202
+
+[[historical_test_results]]
+passed = true
+test_type = "stable"
+package = "qiskit"
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+package_commit_hash = ""
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211444.987508
+
+[[historical_test_results]]
+passed = true
+test_type = "standard"
+package = "qiskit"
+package_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6248125621"
+package_commit_hash = ""
+qiskit_version = ".pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__"
+timestamp = 1695211446.564513
 
 [configuration]
 dependencies_files = [ "requirements.txt", "requirements-dev.txt",]
