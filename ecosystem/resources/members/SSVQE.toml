@@ -7,9 +7,76 @@ alternatives = "_No response_"
 affiliations = "Duke University"
 labels = [ "Algorithms", "Chemistry",]
 tier = "Community"
-tests_results = []
 styles_results = []
 coverages_results = []
 skip_tests = false
-historical_test_results = []
 stars = 0
+[[tests_results]]
+passed = false
+test_type = "development"
+package = "qiskit"
+package_version = "development"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583391"
+package_commit_hash = "22b94a139e89917d0291f3f1f1c598b38b53eff4"
+qiskit_version = "development"
+timestamp = 1695231761.821883
+
+[[tests_results]]
+passed = true
+test_type = "last passing version"
+package = "qiskit"
+package_version = "0.44.1"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583514"
+qiskit_version = "0.44.1"
+timestamp = 1695231757.123825
+
+[[tests_results]]
+passed = true
+test_type = "stable"
+package = "qiskit"
+package_version = "0.44.1"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583514"
+package_commit_hash = ""
+qiskit_version = "0.44.1"
+timestamp = 1695231756.430887
+
+[[tests_results]]
+passed = true
+test_type = "standard"
+package = "qiskit"
+package_version = "0.25.1"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583613"
+package_commit_hash = ""
+qiskit_version = "0.25.1"
+timestamp = 1695231727.509632
+
+[[historical_test_results]]
+passed = true
+test_type = "standard"
+package = "qiskit"
+package_version = "0.25.1"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583613"
+package_commit_hash = ""
+qiskit_version = "0.25.1"
+timestamp = 1695231727.509632
+
+[[historical_test_results]]
+passed = true
+test_type = "stable"
+package = "qiskit"
+package_version = "0.44.1"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583514"
+package_commit_hash = ""
+qiskit_version = "0.44.1"
+timestamp = 1695231756.430887
+
+[[historical_test_results]]
+passed = false
+test_type = "development"
+package = "qiskit"
+package_version = "development"
+logs_link = "https://github.com/frankharkins/ecosystem/actions/runs/6252091080/job/16974583391"
+package_commit_hash = "22b94a139e89917d0291f3f1f1c598b38b53eff4"
+qiskit_version = "development"
+timestamp = 1695231761.821883
+
