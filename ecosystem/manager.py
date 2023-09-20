@@ -262,7 +262,9 @@ class Manager:
                     }
                 )
             )
-    def add_test_result(self, test_json):
+    def add_test_result(self, json_file):
+        with open(json_file) as f:
+            test_json = json.load(f)
         repo_name = test_json.pop('repo_name')
         repo_url = f"https://github.com/{repo_name}"
         test_result = TestResult.from_dict(test_json)

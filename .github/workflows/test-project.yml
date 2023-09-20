@@ -49,20 +49,21 @@ jobs:
         run: |
           # Create the tox environment using the package versions specified in
           # the repo. This means any later force-installs take precedence.
-          if [ ! -e tox.ini ]; then echo "No tox.ini" && exit 1; fi
           echo "PASS=false" >> $GITHUB_ENV
-          pip install tox tox-DEBIAN
+          if [ ! -e tox.ini ]; then echo "No tox.ini" && exit 1; fi
+          pip install "tox>=4"
           tox -epy39 --notest  # Create tox environment
 
       - name: Force install latest Qiskit
-        continue-on-error: true
         if: ${{ inputs.test_type == 'stable' }}
         run: |
+          QISKIT_VERSION=$(tox exec -epy39 -- python -c "import qiskit; print(qiskit.__version__)" | awk "NR==2")
+          echo "QISKIT_VERSION=$QISKIT_VERSION" >> $GITHUB_ENV
+
           tox exec -epy39 -- pip uninstall -y qiskit
           tox exec -epy39 -- pip install --upgrade qiskit --force-reinstall
 
       - name: Force install development Qiskit
-        continue-on-error: true
         if: ${{ inputs.test_type == 'development' }}
         run: |
           tox exec -epy39 -- pip uninstall -y qiskit
@@ -71,18 +72,21 @@ jobs:
           tox exec -epy39 -- pip install git+https://github.com/Qiskit/qiskit@"$QISKIT_COMMIT_HASH" --force-reinstall
           
       - name: Run tests
-        continue-on-error: true
         run: |
-          tox -epy39
-          echo "PASS=true" >> $GITHUB_ENV
           # TODO: Find a cleaner way to get qiskit version
-          QISKIT_VERSION=$(tox exec -epy39 -- python -c 'import qiskit; print(qiskit.__version__)' | awk "NR==2")
+          QISKIT_VERSION=$(tox exec -epy39 -- python -c "import qiskit; print(qiskit.__version__)" | awk "NR==2")
           echo "QISKIT_VERSION=$QISKIT_VERSION" >> $GITHUB_ENV
+
+          tox -epy39
+
+      - name: Set success flag
+        run: echo "PASS=true" >> $GITHUB_ENV
 
       - name: Compile results
         # We upload a JSON artifact so the calling job can read the results.
         # This is a bit ugly, but there doesn't seem to be a better way of doing it.
         # See https://github.com/orgs/community/discussions/17245 for details.
+        if: ${{ !cancelled() }}
         run: |
           LOGS_LINK=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           JSON_CONTENT="{
@@ -101,6 +105,7 @@ jobs:
           echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_ENV
 
       - name: Upload results artifact
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.artifact_name }}
