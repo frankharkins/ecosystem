@@ -281,6 +281,7 @@ class Manager:
             if not repo.skip_tests:
                 name = "/".join(repo.url.split("/")[3:5])
                 repo_names.append(name)
+                break
         return json.dumps(repo_names)
 
 

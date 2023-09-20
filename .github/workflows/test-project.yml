@@ -88,7 +88,8 @@ jobs:
         # See https://github.com/orgs/community/discussions/17245 for details.
         if: ${{ !cancelled() }}
         run: |
-          LOGS_LINK=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ github.job }}
+
+          # LOGS_LINK=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ github.job }}
           JSON_CONTENT="{
             \"repo_name\": \"${{ inputs.repo_name }}\",
             \"passed\": ${{ env.PASS }},
@@ -96,7 +97,7 @@ jobs:
             \"package\": \"qiskit\",
             \"package_version\": \"${{ env.QISKIT_VERSION }}\",
             \"package_commit_hash\": \"${{ env.QISKIT_COMMIT_HASH }}\",
-            \"logs_link\": \"$LOGS_LINK\"
+            \"logs_link\": \"${{ github.job.html_url }}\"
           }"
           echo "$JSON_CONTENT"
           echo "$JSON_CONTENT" > "${{ inputs.test_type }}.json"
