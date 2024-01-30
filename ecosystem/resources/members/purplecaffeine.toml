@@ -13,7 +13,7 @@ website = "https://icekhan13.github.io/purplecaffeine/index.html"
 styles_results = []
 coverages_results = []
 skip_tests = false
-stars = 6
+stars = 7
 [[tests_results]]
 passed = true
 test_type = "development"
