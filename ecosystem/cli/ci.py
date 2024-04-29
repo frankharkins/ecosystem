@@ -33,3 +33,4 @@ class CliCI:
 
         parsed_result = parse_submission_issue(body, current_dir)
         DAO(path=resources_dir).write(parsed_result)
+        set_actions_output([ ("SUBMISSION_NAME", parsed_result.name) ])
