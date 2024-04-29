@@ -1,5 +1,5 @@
 """CliCI class for controlling all CLI functions."""
-import os
+from pathlib import Path
 from typing import Optional
 
 from ecosystem.daos import DAO
@@ -19,9 +19,6 @@ class CliCI:
 
     def __init__(self, root_path: Optional[str] = None):
         """CliCI class."""
-        self.current_dir = root_path or os.path.abspath(os.getcwd())
-        self.resources_dir = "{}/ecosystem/resources".format(self.current_dir)
-        self.dao = DAO(path=self.resources_dir)
 
     @staticmethod
     def add_member_from_issue(body: str) -> None:
@@ -34,5 +31,8 @@ class CliCI:
             None (side effect is updating database)
         """
 
-        parsed_result = parse_submission_issue(body, self.current_dir)
-        self.dao.write(parsed_result)
+        current_dir = Path.cwd()
+        resources_dir = Path(current_dir, "ecosystem/resources")
+
+        parsed_result = parse_submission_issue(body, current_dir)
+        DAO(path=self.resources_dir).write(parsed_result)
