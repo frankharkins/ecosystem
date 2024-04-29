@@ -17,9 +17,6 @@ class CliCI:
     Ex: `python manager.py ci parser_issue --body="<SOME_MARKDOWN>"`
     """
 
-    def __init__(self, root_path: Optional[str] = None):
-        """CliCI class."""
-
     @staticmethod
     def add_member_from_issue(body: str) -> None:
         """Parse an issue created from the issue template and add the member to the database
@@ -35,4 +32,4 @@ class CliCI:
         resources_dir = Path(current_dir, "ecosystem/resources")
 
         parsed_result = parse_submission_issue(body, current_dir)
-        DAO(path=self.resources_dir).write(parsed_result)
+        DAO(path=resources_dir).write(parsed_result)
