@@ -51,8 +51,9 @@ def parse_submission_issue(body_of_issue: str, current_directory: str) -> Reposi
 
     args = { key: (None if value=="_No response_" else value) for key, value in args.items() }
 
-    args["labels"] = [l.strip() for l in args["labels"].split(",")]
-    if args["labels"] == ["_No response_"]:
+    if args["labels"] is None:
         args["labels"] = []
+    else:
+        args["labels"] = [l.strip() for l in args["labels"].split(",")]
 
     return Repository(**args)
