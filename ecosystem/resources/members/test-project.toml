@@ -1,0 +1,8 @@
+name = "My test project"
+url = "https://github.com/frankharkins/test-project"
+description = "Hello"
+licence = "Apache License 2.0"
+labels = [ "hello", "there",]
+website = "https://my-test-website.com"
+group = "transpiler_plugin"
+documentation = "google.com"
