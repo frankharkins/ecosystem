@@ -5,5 +5,5 @@ licence = "Apache License 2.0"
 contact_info = "zyilun8@gmail.com"
 affiliations = "Institute of Computing Technology, Chinese Academy of Sciences."
 labels = [ "Circuit simulator",]
-stars = 7
+stars = 9
 group = "other"
