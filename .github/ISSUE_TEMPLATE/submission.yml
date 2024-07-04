@@ -94,7 +94,7 @@ body:
       placeholder: None
     validations:
       required: false
-  - type: checkbox
+  - type: checkboxes
     id: ibm_maintained
     attributes:
       label: IBM maintenance status
