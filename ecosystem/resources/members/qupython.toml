@@ -1,0 +1,9 @@
+name = "test"
+url = "https://github.com/frankharkins/qupython"
+description = "This is a test submission"
+licence = "Apache License 2.0"
+contact_info = "frankharkins@hotmail.co.uk"
+labels = []
+ibm_maintained = true
+group = "transpiler_plugin"
+uuid = "f64022e1-fda2-4065-aaf2-606efdde8876"
